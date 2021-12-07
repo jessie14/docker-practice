@@ -1,8 +1,8 @@
 #Author: Jessie Wong
-FROM jupyter/scipy-notebook
+FROM jupyter/minimal-notebook
 
-RUN pip install pandas==1.3.4
-
-RUN pip install numpy==1.21.4
-
-RUN pip install rbase==0.1.3
+#Install Python packages
+RUN conda install --quiet --yes \
+  'altair=4.1.*' \
+  'pandas=1.2.*' \
+  'matplotlib-base=3.4.*' \
